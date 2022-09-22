@@ -208,7 +208,8 @@ function revela(x, y, campo) {
         if (campo[x][y] == 1) {
             celula.classList.add('bomba');
             celula.classList.remove('oculta');
-            window.open("https://youtu.be/dQw4w9WgXcQ");
+            
+            document.location.replace("video.html")
             //revelaTudo(campo);
         }
         else {

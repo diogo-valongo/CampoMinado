@@ -1,4 +1,4 @@
-
+import "./camminado.js"
 
 function criaCampoVizivel(nl, nc){
     let tabela = document.getElementById("campo-minado");
