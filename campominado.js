@@ -53,7 +53,6 @@ function iniciaJogo(x, y, campo) {
 }
 
 function contaBombasRedor(x, y, campo) {
-    console.log(campo)
     let contador = 0;
     if (x == 0 && y == 0) {
         if (campo[x][y + 1] == 1) {
@@ -217,7 +216,6 @@ function revela(x, y, campo) {
             celula.classList.add('m' + nBombas);
             celula.classList.remove('oculto');
             if (nBombas == 0) {
-                console.log(campo.length, campo[0].length, x, y)
                 if (x == 0 && y == 0) {
                     revela(x, y + 1, campo); // direita
                     revela(x + 1, y + 1, campo); // inferior direita
@@ -292,11 +290,16 @@ function verificaSeTemBombaRepetida(mat, pos) {
 }
 
 function criaBombas(nBombas, x, y) {
-    let bombas = new Set();
-    while(bombas.size != nBombas){
-        bombas.add([Math.floor(Math.random() * x), Math.floor(Math.random() * y)]);
+    let bombas = [];
+    while(bombas.length != nBombas){
+        let posBomba = "" + Math.floor(Math.random() * x) + "-" + Math.floor(Math.random() * y);
+        if(bombas.indexOf(posBomba) == -1){
+            bombas.push(posBomba);
+        }
+        console.log(bombas)
+        console.log(bombas.size)
     }
-    return bombas   
+    return bombas
 }
 /* function criaBombas(nBombas, x, y) {
     let bombas = [];
@@ -314,20 +317,19 @@ function colocaBombasEmCampo(matriz, nBombas) {
     mostradorDeBombas.textContent = nBombas;
     let posBombas = criaBombas(nBombas, matriz.length, matriz[0].length);
     posBombas.forEach(posBomba => {
-        matriz[posBomba[0]][posBomba[1]] = 1;
+        let cord = posBomba.split("-")
+        matriz[parseInt(cord[0])][parseInt(cord[1])] = 1;
     });
     return matriz
 }
 
 
 
-function main() {
-    campo = criaCampoZerado(8, 8);
-    leMatrix(campo)
-    campo = colocaBombasEmCampo(campo, 10);
-    leMatrix(campo)
-    console.log(campo);
-    iniciaJogo(8, 8, campo);
+function main(x,y,b) {
+    campo = criaCampoZerado(x, y);
+    campo = colocaBombasEmCampo(campo, b);
+    leMatrix(campo) 
+    iniciaJogo(x, y, campo);
 
 }
 
@@ -338,4 +340,4 @@ function leMatrix(mat) {
 }
 
 
-main()
+main(5,8,7)
