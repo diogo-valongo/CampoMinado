@@ -14,6 +14,23 @@
   <link rel="icon" href="bomba.png">
 
   <title>Campo Minado</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const socket = io();
+
+      document.getElementById('enviar').addEventListener('click', () => {
+        const mensagem = document.getElementById('mensagem').value;
+        socket.emit('mensagem', mensagem);
+      });
+
+      socket.on('mensagem', (data) => {
+        const elemento = document.createElement('p');
+        elemento.textContent = data;
+        document.getElementById('mensagens').appendChild(elemento);
+      });
+    });
+  </script>
 </head>
 
 <body class="conteiner">
@@ -27,7 +44,9 @@
     <div style="align-items: center; display: flex; justify-content: center;">
       <table class="center" id="campo-minado"></table>
     </div>
-
+    <input id="mensagem" type="text" placeholder="Digite uma mensagem"/>
+    <button id="enviar">Enviar</button>
+    <div id="mensagens"></div>
     <script src="campominado.js"></script>
     <!-- Optional JavaScript; choose one of the two! -->
 
