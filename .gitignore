@@ -1,0 +1,24 @@
+# Ignorar diretórios node_modules
+/server/node_modules
+/client/node_modules
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de compilação
+/dist
+/build
+
+# Ignorar arquivos de configuração específicos do editor
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignorar arquivos de ambiente
+.env

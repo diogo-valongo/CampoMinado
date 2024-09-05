@@ -48,7 +48,7 @@ function main(){
     //pergunta para o usuario o tamanho e numero de bombas...
     let nl = 9
     let nc = 9
-    let nbombas = 1 
+    let nbombas = 10 
     // por enquanto usarei 9x9 com 10 bombas...
     let matrixBombas = criaMatrixBombas(nl, nc, nbombas)
     //let representacaoCV = criaRepresentacaoCV(nl, nc) 

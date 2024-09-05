@@ -1,0 +1,19 @@
+{
+  "name": "campominado-server",
+  "version": "1.0.0",
+  "description": "Projeto pessoal com objetivo de criar um campo minado que vai ganhando funcionalidades comforme o tempo passa.",
+  "main": "campominado.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Diogo Valongo",
+  "license": "MIT",
+  "dependencies": {
+    "campominado": "file:",
+    "campominado-server": "file:",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
