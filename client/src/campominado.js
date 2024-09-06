@@ -1,7 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import WelcomeMessage from './WelcomeMessage';
+import BombasRestantes from './BombasRestantes';
+
 var numeroDeBandeiras = 0;
 var mostradorDeBombas = document.getElementById("nBombas");
 
+const App = () => {
+  return (
+    <div>
+      <WelcomeMessage />
+      <BombasRestantes />
+    </div>
+  );
+};
 
+ReactDOM.createPortal(<App />, document.getElementById('root'));
 function criaCampoZerado(x, y) {
     let campo = [];
     campo.length = x;
