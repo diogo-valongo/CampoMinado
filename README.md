@@ -1,4 +1,12 @@
 # Projeto Pessoal Simples
+## Observações
+
+Esse projeto é antigo e existem muitas práticas defazadas e que não refletem minhas habilidades atuais (Mensagem pra você recrutador interessado)
+Quando o Deploy foi configurado eu não sabia nada sobre worflow CI/CD e tudo foi feito pela primeira vez. Além de não seguir nenhum padrão para commits.
+
+Esse repositório serviu para treinar minha lógica pasica pra construção de um jogo (que foi desenvolvido em grande parte em quanto eu estava offline) e também para me apresentar a ferramentas de deploy como é o caso do netlify.
+
+Tenho um carinho por ele por ser algo que não foi "copiado", mas sim inventado.
 
 ## Status Atual
 
